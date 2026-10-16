@@ -2,10 +2,11 @@ import { useState } from 'react';
 import Button from './Button';
 import SectionHeading from './SectionHeading';
 
-// To receive submissions by email, create a free form at https://formspree.io
-// and paste its endpoint here, e.g. 'https://formspree.io/f/abcd1234'.
+// Submissions are delivered by Web3Forms (free, no account needed):
+// enter your email at https://web3forms.com, then paste the access key it emails you here.
 // While empty, the form only shows the thank-you message (nothing is sent).
-const FORM_ENDPOINT = '';
+const WEB3FORMS_ACCESS_KEY = '54f46f44-d384-464a-b008-edb7c68c26e5';
+const WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit';
 
 const GOALS = ['Lose fat', 'Build muscle', 'Recomposition', 'General health'];
 const INITIAL_FORM = { name: '', email: '', phone: '', goal: GOALS[0], message: '' };
@@ -38,18 +39,27 @@ export default function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!FORM_ENDPOINT) {
+    if (!WEB3FORMS_ACCESS_KEY) {
       setStatus('sent');
       return;
     }
     setStatus('sending');
+    // Sent as FormData (not JSON) so the browser makes a simple request with no CORS preflight —
+    // Web3Forms rejects JSON preflights from the browser.
+    const payload = new FormData();
+    payload.append('access_key', WEB3FORMS_ACCESS_KEY);
+    payload.append('subject', `New consultation request from ${form.name}`);
+    payload.append('from_name', 'Alex Forge website');
+    Object.entries(form).forEach(([key, value]) => payload.append(key, value));
+
     try {
-      const res = await fetch(FORM_ENDPOINT, {
+      const res = await fetch(WEB3FORMS_ENDPOINT, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify(form),
+        headers: { Accept: 'application/json' },
+        body: payload,
       });
-      setStatus(res.ok ? 'sent' : 'error');
+      const data = await res.json();
+      setStatus(data.success ? 'sent' : 'error');
     } catch {
       setStatus('error');
     }
