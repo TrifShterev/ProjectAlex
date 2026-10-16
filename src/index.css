@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+/* Design tokens — taken from alex_design.html */
+@theme {
+  --color-paper: #fffdf5;
+  --color-ink: #000;
+  --color-yellow: #ffe500;
+  --color-blue: #4d5dfb;
+  --color-cream: #f5f3e9;
+
+  --font-display: "Archivo", sans-serif;
+  --font-body: "Space Grotesk", sans-serif;
+
+  --shadow-brutal-sm: 5px 5px 0 #000;
+  --shadow-brutal: 7px 7px 0 #000;
+  --shadow-brutal-lg: 10px 10px 0 #000;
+
+  --animate-ticker: ticker 22s linear infinite;
+
+  @keyframes ticker {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+}
+
+/* Centered page container (the mock's .wrap) */
+@utility wrap {
+  margin-inline: auto;
+  max-width: 1180px;
+  padding-inline: 1.5rem;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 81px; /* sticky navbar height + border */
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-blue);
+    outline-offset: 3px;
+  }
+
+  ::selection {
+    background-color: var(--color-yellow);
+    color: var(--color-ink);
+  }
+}

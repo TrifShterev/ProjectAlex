@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ALEX FORGE — TRAIN HARD / EAT SMART</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800;900&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFFDF5; --ink:#000; --yellow:#FFE500; --blue:#4D5DFB;
+  --shadow:7px 7px 0 var(--ink); --shadow-sm:5px 5px 0 var(--ink);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:"Space Grotesk",sans-serif;
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,.logo{font-family:"Archivo",sans-serif;text-transform:uppercase;letter-spacing:-.02em}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+section{padding:90px 0}
+
+/* ---------- ticker ---------- */
+.ticker{background:var(--ink);color:var(--yellow);overflow:hidden;
+  padding:11px 0;font-size:12px;font-weight:700;letter-spacing:.22em;
+  text-transform:uppercase;white-space:nowrap}
+.ticker-track{display:inline-block;animation:slide 22s linear infinite}
+.ticker-track span{padding:0 28px}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.ticker-track{animation:none}}
+
+/* ---------- header ---------- */
+header{background:var(--bg);border-bottom:3px solid var(--ink);
+  position:sticky;top:0;z-index:40}
+.nav{display:flex;align-items:center;justify-content:space-between;height:78px}
+.logo{font-size:20px;font-weight:900;letter-spacing:.02em}
+.logo span{background:var(--yellow);padding:2px 8px;border:3px solid var(--ink)}
+.nav nav{display:flex;gap:28px;align-items:center;font-size:12px;
+  font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.nav nav a:hover{background:var(--yellow)}
+@media(max-width:860px){.nav nav a:not(.btn){display:none}}
+
+.btn{display:inline-block;padding:15px 28px;border:3px solid var(--ink);
+  background:var(--yellow);font-family:"Archivo",sans-serif;font-weight:800;
+  font-size:12px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;
+  box-shadow:var(--shadow-sm);transition:.15s}
+.btn:hover{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--ink)}
+.btn-white{background:#fff}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-block{width:100%;text-align:center}
+
+/* ---------- placeholder ---------- */
+.ph{background:repeating-linear-gradient(45deg,#EFEFE7 0 16px,#E4E4DA 16px 32px);
+  border:3px solid var(--ink);display:grid;place-items:center;color:#8C8C82;
+  font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase}
+
+/* ---------- hero ---------- */
+.hero{padding:72px 0 90px;border-bottom:3px solid var(--ink)}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.badge{display:inline-block;border:3px solid var(--ink);background:#fff;
+  padding:7px 16px;font-size:11px;font-weight:700;letter-spacing:.18em;
+  text-transform:uppercase;margin-bottom:26px;box-shadow:4px 4px 0 var(--ink)}
+h1{font-size:clamp(42px,6.4vw,80px);font-weight:900;line-height:.94}
+h1 mark{background:var(--yellow);padding:0 10px;border:3px solid var(--ink);
+  display:inline-block;transform:rotate(-1.2deg)}
+.lead{margin-top:28px;font-size:17px;max-width:50ch;color:#333}
+.cta-row{display:flex;gap:16px;margin-top:36px;flex-wrap:wrap}
+.hero-photo .ph{aspect-ratio:4/5;box-shadow:var(--shadow)}
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:48px}
+  .hero-photo{order:-1}
+  .hero-photo .ph{aspect-ratio:16/12}
+}
+
+/* ---------- section head ---------- */
+.sec-head{margin-bottom:54px}
+.sec-head .kicker{font-size:11px;font-weight:700;letter-spacing:.24em;
+  text-transform:uppercase;background:var(--ink);color:var(--yellow);
+  display:inline-block;padding:6px 14px;margin-bottom:18px}
+h2{font-size:clamp(34px,5vw,58px);font-weight:900;line-height:1}
+.sec-head p{margin-top:16px;max-width:56ch;color:#333}
+
+/* ---------- gallery ---------- */
+#gallery{background:#F5F3E9;border-bottom:3px solid var(--ink)}
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+@media(max-width:1000px){.gal{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:660px){.gal{grid-template-columns:1fr}}
+.case{background:#fff;border:3px solid var(--ink);box-shadow:var(--shadow);
+  transition:.18s}
+.case:hover{transform:translate(-3px,-3px);box-shadow:10px 10px 0 var(--ink)}
+.case-imgs{display:grid;grid-template-columns:1fr 1fr;gap:3px;
+  background:var(--ink);border-bottom:3px solid var(--ink)}
+.case-imgs .ph{aspect-ratio:3/4;border:0;position:relative}
+.tag{position:absolute;top:9px;left:9px;background:#fff;border:2px solid var(--ink);
+  font-size:9px;font-weight:800;letter-spacing:.14em;padding:3px 9px;
+  text-transform:uppercase}
+.tag.after{background:var(--yellow)}
+.case-body{padding:22px}
+.case-body h3{font-size:17px;font-weight:900}
+.case-body .result{display:inline-block;background:var(--blue);color:#fff;
+  font-size:10px;font-weight:800;letter-spacing:.12em;padding:4px 10px;
+  text-transform:uppercase;margin-top:9px}
+.case-body p{font-size:14px;color:#444;margin-top:14px}
+
+/* ---------- contact ---------- */
+.contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:start}
+@media(max-width:900px){.contact-grid{grid-template-columns:1fr}}
+form{background:#fff;border:3px solid var(--ink);box-shadow:var(--shadow);padding:36px}
+.field{margin-bottom:20px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media(max-width:560px){.row2{grid-template-columns:1fr}}
+label{display:block;font-size:11px;font-weight:800;letter-spacing:.16em;
+  text-transform:uppercase;margin-bottom:8px}
+input,select,textarea{width:100%;background:#FFFDF5;border:3px solid var(--ink);
+  padding:13px 15px;font-family:inherit;font-size:15px;color:var(--ink);outline:none}
+input:focus,select:focus,textarea:focus{background:var(--yellow)}
+textarea{min-height:116px;resize:vertical}
+.note{font-size:12.5px;margin-top:18px;text-align:center;font-weight:500}
+.note a{background:var(--yellow);border-bottom:2px solid var(--ink);font-weight:700}
+
+.card{background:#fff;border:3px solid var(--ink);box-shadow:var(--shadow);
+  padding:30px;margin-bottom:26px}
+.card h3{font-size:12px;font-weight:900;letter-spacing:.18em;
+  background:var(--ink);color:var(--yellow);display:inline-block;
+  padding:5px 12px;margin-bottom:22px}
+.c-row{display:flex;gap:16px;align-items:center;padding:14px 0;
+  border-bottom:3px solid var(--ink);transition:.15s}
+.c-row:last-child{border-bottom:0;padding-bottom:0}
+.c-row:hover{background:var(--yellow);padding-left:10px}
+.c-ico{width:42px;height:42px;flex:0 0 42px;border:3px solid var(--ink);
+  background:var(--yellow);display:grid;place-items:center;font-size:16px}
+.c-row:hover .c-ico{background:#fff}
+.c-lab{font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.c-val{font-size:15px;font-weight:700;word-break:break-word}
+.hours{font-size:15px;font-weight:500;line-height:2}
+.hours b{font-weight:800;background:var(--yellow);padding:0 6px}
+
+footer{background:var(--ink);color:var(--yellow);padding:40px 0;text-align:center;
+  font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+</style>
+</head>
+<body>
+
+<div class="ticker">
+  <div class="ticker-track">
+    <span>TRAIN HARD ★ EAT SMART ★ SEE RESULTS ★ PERSONALISED PLANS ★ NO CRASH DIETS ★</span>
+    <span>TRAIN HARD ★ EAT SMART ★ SEE RESULTS ★ PERSONALISED PLANS ★ NO CRASH DIETS ★</span>
+  </div>
+</div>
+
+<header>
+  <div class="wrap nav">
+    <a href="#" class="logo">ALEX <span>FORGE</span></a>
+    <nav>
+      <a href="#gallery">Results</a>
+      <a href="#contact">Contact</a>
+      <a href="#contact" class="btn btn-white">Get My Plan</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="badge">Bodybuilder · Nutrition Specialist</span>
+      <h1>Train hard.<br>Eat smart.<br><mark>See results.</mark></h1>
+      <p class="lead">
+        I'm Alex. I build personalised training and food plans for people who
+        are done with generic programs. Your body, your schedule, your goal —
+        one plan that actually fits.
+      </p>
+      <div class="cta-row">
+        <a href="#contact" class="btn">Get My Plan</a>
+        <a href="#gallery" class="btn btn-white">See Results</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <!-- <img src="alex.jpg" alt="Alex"> -->
+      <div class="ph">Your Photo</div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Real Clients · Real Results</span>
+      <h2>Before &amp; After</h2>
+      <p>Every transformation below came from a plan written for one specific person. No templates.</p>
+    </div>
+
+    <div class="gal">
+      <article class="case">
+        <div class="case-imgs">
+          <div class="ph"><span class="tag">Before</span></div>
+          <div class="ph"><span class="tag after">After</span></div>
+        </div>
+        <div class="case-body">
+          <h3>Marko, 34</h3>
+          <span class="result">−18 kg · 16 weeks</span>
+          <p>Strength training 4×/week + high-protein meal plan.</p>
+        </div>
+      </article>
+
+      <article class="case">
+        <div class="case-imgs">
+          <div class="ph"><span class="tag">Before</span></div>
+          <div class="ph"><span class="tag after">After</span></div>
+        </div>
+        <div class="case-body">
+          <h3>Elena, 28</h3>
+          <span class="result">+6 kg lean · 20 weeks</span>
+          <p>Hypertrophy split + calorie-surplus nutrition plan.</p>
+        </div>
+      </article>
+
+      <article class="case">
+        <div class="case-imgs">
+          <div class="ph"><span class="tag">Before</span></div>
+          <div class="ph"><span class="tag after">After</span></div>
+        </div>
+        <div class="case-body">
+          <h3>David, 41</h3>
+          <span class="result">−12 kg · 14 weeks</span>
+          <p>Home workouts + simple, family-friendly food plan.</p>
+        </div>
+      </article>
+
+      <article class="case">
+        <div class="case-imgs">
+          <div class="ph"><span class="tag">Before</span></div>
+          <div class="ph"><span class="tag after">After</span></div>
+        </div>
+        <div class="case-body">
+          <h3>Nina, 31</h3>
+          <span class="result">−9 kg · 12 weeks</span>
+          <p>Return to training after pregnancy + meal prep system.</p>
+        </div>
+      </article>
+
+      <article class="case">
+        <div class="case-imgs">
+          <div class="ph"><span class="tag">Before</span></div>
+          <div class="ph"><span class="tag after">After</span></div>
+        </div>
+        <div class="case-body">
+          <h3>Tom, 25</h3>
+          <span class="result">−22 kg · 24 weeks</span>
+          <p>Beginner-to-intermediate program + habit coaching.</p>
+        </div>
+      </article>
+
+      <article class="case">
+        <div class="case-imgs">
+          <div class="ph"><span class="tag">Before</span></div>
+          <div class="ph"><span class="tag after">After</span></div>
+        </div>
+        <div class="case-body">
+          <h3>Sara, 37</h3>
+          <span class="result">−14 kg · 18 weeks</span>
+          <p>Strength + conditioning plan, gluten-free nutrition.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Let's Start</span>
+      <h2>Get your plan</h2>
+      <p>Fill in the form and I'll get back to you within 24 hours with your first assessment.</p>
+    </div>
+
+    <div class="contact-grid">
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div class="row2">
+          <div class="field">
+            <label for="name">Your name</label>
+            <input id="name" name="name" type="text" placeholder="John Smith" required>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="john@email.com" required>
+          </div>
+        </div>
+        <div class="row2">
+          <div class="field">
+            <label for="phone">Phone (optional)</label>
+            <input id="phone" name="phone" type="tel" placeholder="+1 555 000 000">
+          </div>
+          <div class="field">
+            <label for="goal">Your goal</label>
+            <select id="goal" name="goal">
+              <option>Lose fat</option>
+              <option>Build muscle</option>
+              <option>Recomposition</option>
+              <option>General health</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="message">Tell me about yourself</label>
+          <textarea id="message" name="message" placeholder="Age, current training, eating habits, what you want to achieve..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-block">Send Message</button>
+        <p class="note">Or email me directly at <a href="mailto:alex@alexforge.com">alex@alexforge.com</a></p>
+      </form>
+
+      <div>
+        <div class="card">
+          <h3>Personal Contacts</h3>
+          <a class="c-row" href="mailto:alex@alexforge.com">
+            <div class="c-ico">✉</div>
+            <div><div class="c-lab">Email</div><div class="c-val">alex@alexforge.com</div></div>
+          </a>
+          <a class="c-row" href="tel:+15550000000">
+            <div class="c-ico">☎</div>
+            <div><div class="c-lab">Phone</div><div class="c-val">+1 555 000 000</div></div>
+          </a>
+          <a class="c-row" href="https://wa.me/15550000000" target="_blank" rel="noopener">
+            <div class="c-ico">◍</div>
+            <div><div class="c-lab">WhatsApp</div><div class="c-val">+1 555 000 000</div></div>
+          </a>
+          <a class="c-row" href="https://instagram.com/" target="_blank" rel="noopener">
+            <div class="c-ico">◎</div>
+            <div><div class="c-lab">Instagram</div><div class="c-val">@alexforge.fit</div></div>
+          </a>
+        </div>
+
+        <div class="card">
+          <h3>Availability</h3>
+          <p class="hours">
+            <b>Mon – Fri</b> · 08:00 – 20:00<br>
+            <b>Saturday</b> · 09:00 – 14:00<br>
+            <b>Sunday</b> · Closed
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>© 2025 Alex Forge — Train Hard · Eat Smart · See Results</footer>
+
+</body>
+</html>
