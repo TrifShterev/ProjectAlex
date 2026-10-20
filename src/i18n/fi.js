@@ -109,11 +109,8 @@ export default {
     now: 'Nyt',
     clients: [
       { result: '−18 kg · 16 viikkoa', note: 'Voimaharjoittelu 4×/viikko + runsasproteiininen ateriasuunnitelma.' },
-      { result: '+6 kg lihasta · 20 viikkoa', note: 'Lihasmassaa kasvattava jakoohjelma + energiaylijäämäinen ruokavalio.' },
+      { result: '−9 kg · 20 viikkoa', note: 'Voimaharjoittelu 3×/viikko + tasapainoinen ateriasuunnitelma energiavajeella.' },
       { result: '−12 kg · 14 viikkoa', note: 'Kotitreenit + helppo, koko perheelle sopiva ruokasuunnitelma.' },
-      { result: '−9 kg · 12 viikkoa', note: 'Paluu treeniin raskauden jälkeen + meal prep -rutiini.' },
-      { result: '−22 kg · 24 viikkoa', note: 'Ohjelma aloittelijasta keskitasolle + tapavalmennus.' },
-      { result: '−14 kg · 18 viikkoa', note: 'Voima- ja kestävyysohjelma, gluteeniton ruokavalio.' },
     ],
   },
 

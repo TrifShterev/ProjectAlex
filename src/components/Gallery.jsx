@@ -1,23 +1,21 @@
 import { useLanguage } from '../i18n/LanguageContext';
 import SectionHeading from './SectionHeading';
 
-// Placeholder photos (colors match the mock's striped placeholders).
-// Replace `before` / `now` with real client photo URLs or imports.
-const placeholder = (label) => `https://placehold.co/300x400/EFEFE7/8C8C82?text=${label}`;
-
+// Client photos live in public/gallery/<id>-before.jpg and <id>-now.jpg (full-body shots).
+// Faces are fogged with a CSS blur plus a soft mist over the head area; the body stays readable.
 // Result and note text for each client comes from t.gallery.clients, in the same order.
-const CLIENTS = ['Marko, 34', 'Elena, 28', 'David, 41', 'Nina, 31', 'Tom, 25', 'Sara, 37'].map((name) => ({
-  name,
-  before: placeholder('Before'),
-  now: placeholder('Now'),
-}));
+const CLIENTS = [
+  { id: 'marko', name: 'Marko, 34' },
+  { id: 'elena', name: 'Elena, 28' },
+  { id: 'david', name: 'David, 41' },
+];
 
 function TransformationCard({ client }) {
   const { t } = useLanguage();
   const firstName = client.name.split(',')[0];
   const photos = [
-    { id: 'before', label: t.gallery.before, src: client.before, tag: 'bg-white' },
-    { id: 'now', label: t.gallery.now, src: client.now, tag: 'bg-yellow' },
+    { id: 'before', label: t.gallery.before, tag: 'bg-white' },
+    { id: 'now', label: t.gallery.now, tag: 'bg-yellow' },
   ];
 
   return (
@@ -26,13 +24,14 @@ function TransformationCard({ client }) {
         {photos.map((photo) => (
           <div key={photo.id} className="relative aspect-3/4 overflow-hidden bg-[#EFEFE7]">
             <img
-              src={photo.src}
+              src={`/gallery/${client.id}-${photo.id}.jpg`}
               alt={`${firstName} — ${photo.label.toLowerCase()}`}
               loading="lazy"
               width="300"
               height="400"
-              className="size-full object-cover transition duration-300 group-hover:scale-105 motion-reduce:transition-none"
+              className="size-full object-cover blur-[3px] transition duration-300 group-hover:scale-105 motion-reduce:transition-none"
             />
+            <div className="pointer-events-none absolute inset-x-0 top-0 h-[28%] bg-[radial-gradient(ellipse_at_50%_45%,rgba(239,239,231,0.95),rgba(239,239,231,0.6)_55%,transparent_75%)] backdrop-blur-xl" />
             <span
               className={`absolute top-2.5 left-2.5 border-2 border-ink px-2 py-0.5 text-[9px] font-extrabold uppercase tracking-[0.14em] ${photo.tag}`}
             >

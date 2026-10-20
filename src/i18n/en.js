@@ -107,11 +107,8 @@ export default {
     now: 'Now',
     clients: [
       { result: '−18 kg · 16 weeks', note: 'Strength training 4×/week + high-protein meal plan.' },
-      { result: '+6 kg lean · 20 weeks', note: 'Hypertrophy split + calorie-surplus nutrition plan.' },
+      { result: '−9 kg · 20 weeks', note: 'Strength training 3×/week + balanced calorie-deficit meal plan.' },
       { result: '−12 kg · 14 weeks', note: 'Home workouts + simple, family-friendly food plan.' },
-      { result: '−9 kg · 12 weeks', note: 'Return to training after pregnancy + meal prep system.' },
-      { result: '−22 kg · 24 weeks', note: 'Beginner-to-intermediate program + habit coaching.' },
-      { result: '−14 kg · 18 weeks', note: 'Strength + conditioning plan, gluten-free nutrition.' },
     ],
   },
 
