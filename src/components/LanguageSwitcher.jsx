@@ -44,7 +44,7 @@ export default function LanguageSwitcher() {
         onClick={() => setOpen((isOpen) => !isOpen)}
         aria-expanded={open}
         aria-controls="language-menu"
-        className="flex h-11 items-center gap-2 border-3 border-ink bg-white px-3 font-display text-xs font-extrabold uppercase tracking-[0.14em] shadow-[3px_3px_0_#000] transition active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
+        className="flex h-11 items-center gap-2 border-3 border-ink bg-white px-3 font-display text-xs font-extrabold uppercase tracking-[0.14em] shadow-[3px_3px_0_#000] transition active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
       >
         <span className="sr-only">{t.nav.language}: </span>
         {lang}

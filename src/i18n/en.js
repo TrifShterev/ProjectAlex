@@ -30,6 +30,17 @@ export default {
     consultBadge: 'Free 30-min consult →',
   },
 
+  eatSmart: {
+    kicker: 'In My Kitchen · Eat Smart',
+    title: 'Eat smart, every day',
+    text: "The food in my plans is the food I cook at home: whole ingredients, simple recipes and real portions. Eating healthy doesn't have to be complicated — or boring.",
+    points: ['Whole, simple ingredients', 'Recipes you can prep ahead', 'Portions built around your goal'],
+    cta: 'Get My Meal Plan',
+    imageAlt: 'Alex in the kitchen mixing a fresh salad with chickpeas, avocado and vegetables',
+    caption: 'Eat Smart',
+    videoLabel: 'Eat Smart — video from Alex',
+  },
+
   about: {
     imageAlt: 'Alex from behind, showing a defined, muscular back and neck tattoo',
     caption: 'Discipline = Results',

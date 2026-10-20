@@ -6,16 +6,16 @@ export default function Hero() {
   const { t } = useLanguage();
 
   return (
-    <section id="home" className="border-b-3 border-ink pt-12 pb-16 md:pt-[72px] md:pb-[90px]">
+    <section id="home" className="border-b-3 border-ink pt-12 pb-16 md:pt-18 md:pb-22.5">
       <div className="wrap grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-14">
         <div>
-          <span className="mb-[26px] inline-block border-3 border-ink bg-white px-4 py-[7px] text-[11px] font-bold uppercase tracking-[0.18em] shadow-[4px_4px_0_#000]">
+          <span className="mb-6.5 inline-block border-3 border-ink bg-white px-4 py-1.75 text-[11px] font-bold uppercase tracking-[0.18em] shadow-[4px_4px_0_#000]">
             {t.hero.badge}
           </span>
 
           <h1 className="text-[clamp(42px,6vw,76px)] font-black leading-[0.94]">
             {t.hero.titleStart}{' '}
-            <mark className="mt-2 inline-block -rotate-[1.2deg] border-3 border-ink bg-yellow px-2.5 text-ink">
+            <mark className="mt-2 inline-block rotate-[-1.2deg] border-3 border-ink bg-yellow px-2.5 text-ink">
               {t.hero.titleHighlight}
             </mark>
           </h1>
@@ -42,14 +42,14 @@ export default function Hero() {
         </div>
 
         {/* Photo sits on top on small screens (as in the mock), on the right from lg up */}
-        <div className="relative order-first lg:order-none">
+        <div className="relative order-first lg:order-0">
           <div className="overflow-hidden border-3 border-ink shadow-brutal">
             <img
               src={alexFront}
               alt={t.hero.imageAlt}
               width="632"
               height="720"
-              className="aspect-[4/3] w-full object-cover object-[center_20%] lg:aspect-[4/5] lg:object-top"
+              className="aspect-4/3 w-full object-cover object-[center_20%] lg:aspect-4/5 lg:object-top"
             />
           </div>
           <a

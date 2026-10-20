@@ -1,6 +1,7 @@
 import Ticker from './components/Ticker';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import EatSmart from './components/EatSmart';
 import About from './components/About';
 import Services from './components/Services';
 import Gallery from './components/Gallery';
@@ -15,6 +16,7 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
+        <EatSmart />
         <About />
         <Services />
         <Gallery />

@@ -14,7 +14,7 @@ export default function About() {
               src={alexBack}
               alt={t.about.imageAlt}
               loading="lazy"
-              className="aspect-[4/3] w-full object-cover object-[40%_center] lg:aspect-[4/5]"
+              className="aspect-4/3 w-full object-cover object-[40%_center] lg:aspect-4/5"
             />
           </div>
           <figcaption className="absolute top-4 left-4 bg-ink px-4 py-2 font-display text-sm font-black uppercase tracking-[0.12em] text-yellow">
@@ -37,7 +37,7 @@ export default function About() {
                 key={i}
                 className="group flex gap-4 border-b-3 border-ink p-5 transition-colors last:border-b-0 hover:bg-yellow"
               >
-                <span className="grid size-[42px] shrink-0 place-items-center border-3 border-ink bg-yellow font-display font-black transition-colors group-hover:bg-white">
+                <span className="grid size-10.5 shrink-0 place-items-center border-3 border-ink bg-yellow font-display font-black transition-colors group-hover:bg-white">
                   0{i + 1}
                 </span>
                 <div>

@@ -28,7 +28,7 @@ export default function Testimonials() {
                 >
                   “
                 </span>
-                <span className="text-lg tracking-[0.1em]" role="img" aria-label={t.testimonials.ratingLabel}>
+                <span className="text-lg tracking-widest" role="img" aria-label={t.testimonials.ratingLabel}>
                   ★★★★★
                 </span>
               </div>

@@ -23,10 +23,10 @@ const CONTACTS = [
 
 const labelClass = 'mb-2 block text-[11px] font-extrabold uppercase tracking-[0.16em]';
 const inputClass =
-  'w-full border-3 border-ink bg-paper px-[15px] py-[13px] text-[15px] text-ink outline-none transition-colors placeholder:text-[#8C8C82] focus:bg-yellow';
-const cardClass = 'border-3 border-ink bg-white p-6 shadow-brutal sm:p-[30px]';
+  'w-full border-3 border-ink bg-paper px-3.75 py-3.25 text-[15px] text-ink outline-none transition-colors placeholder:text-[#8C8C82] focus:bg-yellow';
+const cardClass = 'border-3 border-ink bg-white p-6 shadow-brutal sm:p-7.5';
 const cardTitleClass =
-  'mb-[22px] inline-block bg-ink px-3 py-[5px] text-xs font-black tracking-[0.18em] text-yellow';
+  'mb-5.5 inline-block bg-ink px-3 py-1.25 text-xs font-black tracking-[0.18em] text-yellow';
 
 export default function Contact() {
   const { lang, t } = useLanguage();
@@ -91,7 +91,7 @@ export default function Contact() {
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="border-3 border-ink bg-white p-6 shadow-brutal sm:p-9">
-              <div className="grid gap-5 sm:grid-cols-2 sm:gap-[18px]">
+              <div className="grid gap-5 sm:grid-cols-2 sm:gap-4.5">
                 <div>
                   <label htmlFor="name" className={labelClass}>
                     {t.contact.labels.name}
@@ -175,7 +175,7 @@ export default function Contact() {
                   placeholder={t.contact.placeholders.message}
                   value={form.message}
                   onChange={handleChange}
-                  className={`${inputClass} min-h-[116px] resize-y`}
+                  className={`${inputClass} min-h-29 resize-y`}
                 />
               </div>
 
@@ -188,7 +188,7 @@ export default function Contact() {
               <Button type="submit" block className="mt-6" disabled={status === 'sending'}>
                 {status === 'sending' ? t.contact.sending : t.contact.send}
               </Button>
-              <p className="mt-[18px] text-center text-[12.5px] font-medium">
+              <p className="mt-4.5 text-center text-[12.5px] font-medium">
                 {t.contact.emailDirect}{' '}
                 <a href="mailto:alex@alexforge.com" className="border-b-2 border-ink bg-yellow font-bold">
                   alex@alexforge.com
@@ -197,7 +197,7 @@ export default function Contact() {
             </form>
           )}
 
-          <div className="space-y-[26px]">
+          <div className="space-y-6.5">
             <div className={cardClass}>
               <h3 className={cardTitleClass}>{t.contact.contactsTitle}</h3>
               {CONTACTS.map((contact) => (
@@ -209,7 +209,7 @@ export default function Contact() {
                 >
                   <span
                     aria-hidden="true"
-                    className="grid size-[42px] shrink-0 place-items-center border-3 border-ink bg-yellow text-base transition-colors group-hover:bg-white"
+                    className="grid size-10.5 shrink-0 place-items-center border-3 border-ink bg-yellow text-base transition-colors group-hover:bg-white"
                   >
                     {contact.icon}
                   </span>
@@ -217,7 +217,7 @@ export default function Contact() {
                     <span className="block text-[10px] font-extrabold uppercase tracking-[0.14em]">
                       {t.contact.channels[contact.channel]}
                     </span>
-                    <span className="block text-[15px] font-bold break-words">{contact.value}</span>
+                    <span className="block text-[15px] font-bold wrap-break-word">{contact.value}</span>
                   </span>
                 </a>
               ))}

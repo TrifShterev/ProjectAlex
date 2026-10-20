@@ -6,7 +6,7 @@ export default function Ticker() {
   const half = Array(3).fill(t.ticker).join(' ');
 
   return (
-    <div className="overflow-hidden whitespace-nowrap bg-ink py-[11px] text-xs font-bold uppercase tracking-[0.22em] text-yellow">
+    <div className="overflow-hidden whitespace-nowrap bg-ink py-2.75 text-xs font-bold uppercase tracking-[0.22em] text-yellow">
       <div className="inline-block animate-ticker motion-reduce:animate-none">
         <span className="px-7">{half}</span>
         <span className="px-7" aria-hidden="true">

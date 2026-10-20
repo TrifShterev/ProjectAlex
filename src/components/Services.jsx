@@ -36,7 +36,7 @@ export default function Services() {
           {services.map((service) => (
             <article
               key={service.number}
-              className="grid grid-rows-[auto_1fr] border-3 border-ink bg-white shadow-brutal transition duration-200 hover:-translate-x-[3px] hover:-translate-y-[3px] hover:shadow-brutal-lg motion-reduce:transition-none md:row-span-2 md:grid-rows-subgrid"
+              className="grid grid-rows-[auto_1fr] border-3 border-ink bg-white shadow-brutal transition duration-200 hover:-translate-x-0.75 hover:-translate-y-0.75 hover:shadow-brutal-lg motion-reduce:transition-none md:row-span-2 md:grid-rows-subgrid"
             >
               <header className={`flex items-center gap-4 border-b-3 border-ink p-6 ${service.header}`}>
                 <span className="grid size-14 shrink-0 place-items-center border-3 border-ink bg-white text-ink">

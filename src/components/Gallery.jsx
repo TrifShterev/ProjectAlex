@@ -21,10 +21,10 @@ function TransformationCard({ client }) {
   ];
 
   return (
-    <article className="group border-3 border-ink bg-white shadow-brutal transition duration-200 hover:-translate-x-[3px] hover:-translate-y-[3px] hover:shadow-brutal-lg motion-reduce:transition-none">
-      <div className="grid grid-cols-2 gap-[3px] border-b-3 border-ink bg-ink">
+    <article className="group border-3 border-ink bg-white shadow-brutal transition duration-200 hover:-translate-x-0.75 hover:-translate-y-0.75 hover:shadow-brutal-lg motion-reduce:transition-none">
+      <div className="grid grid-cols-2 gap-0.75 border-b-3 border-ink bg-ink">
         {photos.map((photo) => (
-          <div key={photo.id} className="relative aspect-[3/4] overflow-hidden bg-[#EFEFE7]">
+          <div key={photo.id} className="relative aspect-3/4 overflow-hidden bg-[#EFEFE7]">
             <img
               src={photo.src}
               alt={`${firstName} — ${photo.label.toLowerCase()}`}
@@ -41,7 +41,7 @@ function TransformationCard({ client }) {
           </div>
         ))}
       </div>
-      <div className="p-[22px]">
+      <div className="p-5.5">
         <h3 className="text-[17px] font-black">{client.name}</h3>
         <span className="mt-2 inline-block bg-blue px-2.5 py-1 text-[10px] font-extrabold uppercase tracking-[0.12em] text-white">
           {client.result}
@@ -62,7 +62,7 @@ export default function Gallery() {
           {t.gallery.intro}
         </SectionHeading>
 
-        <div className="grid gap-[30px] sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-7.5 sm:grid-cols-2 lg:grid-cols-3">
           {CLIENTS.map((client, i) => (
             <TransformationCard key={client.name} client={{ ...client, ...t.gallery.clients[i] }} />
           ))}

@@ -31,6 +31,17 @@ export default {
     consultBadge: 'Maksuton 30 min konsultaatio →',
   },
 
+  eatSmart: {
+    kicker: 'Keittiössäni · Syö fiksusti',
+    title: 'Syö fiksusti joka päivä',
+    text: 'Suunnitelmieni ruoka on samaa ruokaa, jota teen itse kotona: aitoja raaka-aineita, helppoja reseptejä ja oikeat annokset. Terveellisen syömisen ei tarvitse olla monimutkaista – eikä tylsää.',
+    points: ['Aidot, yksinkertaiset raaka-aineet', 'Reseptit, jotka voi valmistaa etukäteen', 'Annokset tavoitteesi mukaan'],
+    cta: 'Hanki ateriasuunnitelma',
+    imageAlt: 'Alex keittiössä sekoittamassa tuoretta salaattia, jossa on kikherneitä, avokadoa ja vihanneksia',
+    caption: 'Syö fiksusti',
+    videoLabel: 'Syö fiksusti – Alexin video',
+  },
+
   about: {
     imageAlt: 'Alex takaapäin: lihaksikas, treenattu selkä ja niskatatuointi',
     caption: 'Kuri = Tulokset',

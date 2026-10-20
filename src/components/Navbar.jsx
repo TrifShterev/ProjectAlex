@@ -12,7 +12,7 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-40 border-b-3 border-ink bg-paper">
-      <div className="wrap flex h-[78px] items-center justify-between gap-6">
+      <div className="wrap flex h-19.5 items-center justify-between gap-6">
         <a href="#home" onClick={close} className="shrink-0 whitespace-nowrap font-display text-xl font-black uppercase tracking-[0.02em]">
           Alex <span className="border-3 border-ink bg-yellow px-2 py-0.5">Forge</span>
         </a>
@@ -44,12 +44,12 @@ export default function Navbar() {
             aria-expanded={open}
             aria-controls="mobile-menu"
             aria-label={open ? t.nav.closeMenu : t.nav.openMenu}
-            className="grid size-11 place-items-center border-3 border-ink bg-yellow shadow-[3px_3px_0_#000] transition active:translate-x-[2px] active:translate-y-[2px] active:shadow-none lg:hidden"
+            className="grid size-11 place-items-center border-3 border-ink bg-yellow shadow-[3px_3px_0_#000] transition active:translate-x-0.5 active:translate-y-0.5 active:shadow-none lg:hidden"
           >
-            <span className="flex w-5 flex-col gap-[5px]" aria-hidden="true">
-              <span className={`h-[3px] bg-ink transition duration-200 ${open ? 'translate-y-2 rotate-45' : ''}`} />
-              <span className={`h-[3px] bg-ink transition duration-200 ${open ? 'opacity-0' : ''}`} />
-              <span className={`h-[3px] bg-ink transition duration-200 ${open ? '-translate-y-2 -rotate-45' : ''}`} />
+            <span className="flex w-5 flex-col gap-1.25" aria-hidden="true">
+              <span className={`h-0.75 bg-ink transition duration-200 ${open ? 'translate-y-2 rotate-45' : ''}`} />
+              <span className={`h-0.75 bg-ink transition duration-200 ${open ? 'opacity-0' : ''}`} />
+              <span className={`h-0.75 bg-ink transition duration-200 ${open ? '-translate-y-2 -rotate-45' : ''}`} />
             </span>
           </button>
         </div>
