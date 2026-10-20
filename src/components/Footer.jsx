@@ -1,10 +1,6 @@
-const LINKS = [
-  { href: '#about', label: 'About' },
-  { href: '#services', label: 'Services' },
-  { href: '#results', label: 'Results' },
-  { href: '#reviews', label: 'Reviews' },
-  { href: '#contact', label: 'Contact' },
-];
+import { useLanguage } from '../i18n/LanguageContext';
+
+const SECTION_IDS = ['about', 'services', 'results', 'reviews', 'contact'];
 
 // Replace with the real profile URLs.
 const SOCIALS = [
@@ -15,6 +11,8 @@ const SOCIALS = [
 ];
 
 export default function Footer() {
+  const { t } = useLanguage();
+
   return (
     <footer className="bg-ink text-yellow">
       <div className="wrap grid gap-10 py-12 md:grid-cols-[1fr_auto] md:items-start">
@@ -22,24 +20,22 @@ export default function Footer() {
           <a href="#home" className="font-display text-xl font-black uppercase tracking-[0.02em]">
             Alex <span className="border-3 border-yellow bg-yellow px-2 py-0.5 text-ink">Forge</span>
           </a>
-          <p className="mt-4 max-w-[36ch] text-sm text-white">
-            Personal training and healthy nutrition coaching — in the gym and online.
-          </p>
-          <nav aria-label="Footer" className="mt-6 flex flex-wrap gap-x-6 gap-y-2">
-            {LINKS.map((link) => (
+          <p className="mt-4 max-w-[36ch] text-sm text-white">{t.footer.tagline}</p>
+          <nav aria-label={t.footer.navLabel} className="mt-6 flex flex-wrap gap-x-6 gap-y-2">
+            {SECTION_IDS.map((id) => (
               <a
-                key={link.href}
-                href={link.href}
+                key={id}
+                href={`#${id}`}
                 className="text-xs font-bold uppercase tracking-[0.16em] transition-colors hover:bg-yellow hover:text-ink"
               >
-                {link.label}
+                {t.nav.links[id]}
               </a>
             ))}
           </nav>
         </div>
 
         <div>
-          <p className="mb-4 text-xs font-bold uppercase tracking-[0.16em] text-white">Follow the journey</p>
+          <p className="mb-4 text-xs font-bold uppercase tracking-[0.16em] text-white">{t.footer.follow}</p>
           <ul className="flex flex-wrap gap-3">
             {SOCIALS.map((social) => (
               <li key={social.label}>
@@ -47,7 +43,7 @@ export default function Footer() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label={`Alex Forge on ${social.label} (opens in a new tab)`}
+                  aria-label={t.footer.socialAria(social.label)}
                   className="inline-block border-2 border-yellow px-3.5 py-2 text-xs font-bold uppercase tracking-[0.14em] transition-colors hover:bg-yellow hover:text-ink"
                 >
                   {social.label} ↗
@@ -59,7 +55,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t-2 border-yellow/30 py-6 text-center text-xs font-bold uppercase tracking-[0.16em]">
-        © {new Date().getFullYear()} Alex Forge — Train Hard · Eat Smart · See Results
+        © {new Date().getFullYear()} Alex Forge — {t.footer.motto}
       </div>
     </footer>
   );

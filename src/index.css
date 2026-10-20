@@ -8,8 +8,9 @@
   --color-blue: #4d5dfb;
   --color-cream: #f5f3e9;
 
-  --font-display: "Archivo", sans-serif;
-  --font-body: "Space Grotesk", sans-serif;
+  /* Second family in each stack covers Cyrillic (Bulgarian) — see index.html */
+  --font-display: "Archivo", "Inter Tight", sans-serif;
+  --font-body: "Space Grotesk", "Manrope", sans-serif;
 
   --shadow-brutal-sm: 5px 5px 0 #000;
   --shadow-brutal: 7px 7px 0 #000;
@@ -52,6 +53,7 @@
     font-family: var(--font-display);
     text-transform: uppercase;
     letter-spacing: -0.02em;
+    overflow-wrap: break-word; /* last resort for long Finnish / Bulgarian words on narrow screens */
   }
 
   :focus-visible {

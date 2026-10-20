@@ -1,36 +1,22 @@
+import { useLanguage } from '../i18n/LanguageContext';
 import SectionHeading from './SectionHeading';
 
-const REVIEWS = [
-  {
-    quote:
-      "I'd tried every program online and always quit after a month. Alex gave me a plan that fit my shifts — 16 weeks later I'm down 18 kg and still going.",
-    name: 'Marko P.',
-    program: 'Gym Training + Meal Plan',
-  },
-  {
-    quote:
-      "The meal plans changed everything. No starving, no boring chicken-and-rice — just food I actually like, portioned for my goal. My energy is through the roof.",
-    name: 'Elena K.',
-    program: 'Custom Meal Plan',
-  },
-  {
-    quote:
-      'Alex is strict in the best way. Every session has a purpose, every check-in keeps me honest. I finally understand how to train — not just what to do.',
-    name: 'David S.',
-    program: '1-on-1 Gym Training',
-  },
-];
+// Quote and program text for each reviewer comes from t.testimonials.items, in the same order.
+const REVIEWERS = ['Marko P.', 'Elena K.', 'David S.'];
 
 export default function Testimonials() {
+  const { t } = useLanguage();
+  const reviews = REVIEWERS.map((name, i) => ({ name, ...t.testimonials.items[i] }));
+
   return (
     <section id="reviews" className="border-b-3 border-ink bg-blue py-16 md:py-24">
       <div className="wrap">
-        <SectionHeading kicker="Client Reviews" title="What clients say" light>
-          Don't take my word for it — here's what people who put in the work have to say.
+        <SectionHeading kicker={t.testimonials.kicker} title={t.testimonials.title} light>
+          {t.testimonials.intro}
         </SectionHeading>
 
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {REVIEWS.map((review, i) => (
+          {reviews.map((review, i) => (
             <figure
               key={review.name}
               className={`flex flex-col border-3 border-ink bg-white p-7 shadow-brutal ${i === 2 ? 'sm:col-span-2 lg:col-span-1' : ''}`}
@@ -42,7 +28,7 @@ export default function Testimonials() {
                 >
                   “
                 </span>
-                <span className="text-lg tracking-[0.1em]" role="img" aria-label="Rated 5 out of 5">
+                <span className="text-lg tracking-[0.1em]" role="img" aria-label={t.testimonials.ratingLabel}>
                   ★★★★★
                 </span>
               </div>
