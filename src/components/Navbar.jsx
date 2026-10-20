@@ -3,7 +3,7 @@ import { useLanguage } from '../i18n/LanguageContext';
 import Button from './Button';
 import LanguageSwitcher from './LanguageSwitcher';
 
-const SECTION_IDS = ['about', 'services', 'results', 'reviews', 'contact'];
+const SECTION_IDS = ['about', 'services', 'reviews', 'contact'];
 
 export default function Navbar() {
   const { t } = useLanguage();

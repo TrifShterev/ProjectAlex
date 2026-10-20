@@ -1,6 +1,6 @@
 import { useLanguage } from '../i18n/LanguageContext';
 
-const SECTION_IDS = ['about', 'services', 'results', 'reviews', 'contact'];
+const SECTION_IDS = ['about', 'services', 'reviews', 'contact'];
 
 // Replace with the real profile URLs.
 const SOCIALS = [
