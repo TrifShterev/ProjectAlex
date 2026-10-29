@@ -1,8 +1,9 @@
 // English copy (default language). fi.js and bg.js mirror this shape exactly.
 export default {
   meta: {
-    title: 'ALEX FORGE — Build Your Best Body & Mind',
-    description: 'Alex Forge — personalized gym training and healthy meal regimens tailored to your lifestyle.',
+    title: 'Personalized Fitness & Nutrition Plans | Alex Forge',
+    description:
+      'Get personalized fitness and nutrition plans from Alex Forge, an online fitness coach for strength, fat loss, and sustainable results. Book your free consult today.',
   },
 
   nav: {
@@ -20,19 +21,20 @@ export default {
 
   hero: {
     badge: 'Personal Trainer · Nutrition Coach',
-    titleStart: 'Build Your Best',
-    titleHighlight: 'Body & Mind.',
-    intro: 'Personalized gym training and healthy meal regimens tailored to your lifestyle.',
+    titleStart: 'Personalized Fitness & Nutrition Plans for',
+    titleHighlight: 'Real Results.',
+    intro:
+      'Get personalized fitness and nutrition plans from an online fitness coach, built around your schedule, goals, training experience, and the foods you enjoy.',
     primaryCta: 'Book a Free Consultation',
     secondaryCta: 'Start Your Transformation',
     highlights: ['1-on-1 gym training', 'Custom meal plans', 'Weekly check-ins'],
-    imageAlt: 'Alex, fitness coach, curling a dumbbell in the gym',
+    imageAlt: 'Alex Forge online fitness coach curling a dumbbell in the gym',
     consultBadge: 'Free 30-min consult →',
   },
 
   eatSmart: {
     kicker: 'In My Kitchen · Eat Smart',
-    title: 'Eat smart, every day',
+    title: 'Healthy Meal Plans That Fit Real Life',
     text: "The food in my plans is the food I cook at home: whole ingredients, simple recipes and real portions. Eating healthy doesn't have to be complicated — or boring.",
     points: ['Whole, simple ingredients', 'Recipes you can prep ahead', 'Portions built around your goal'],
     cta: 'Get My Meal Plan',
@@ -68,7 +70,7 @@ export default {
 
   services: {
     kicker: 'What I Offer',
-    title: 'Train hard. Eat smart.',
+    title: 'Personalized Fitness & Nutrition Coaching',
     intro: 'Two coaching programs that work on their own — and work even better together.',
     label: 'Service',
     items: [
@@ -101,8 +103,8 @@ export default {
 
   gallery: {
     kicker: 'Real Clients · Real Results',
-    title: 'Before & Now',
-    intro: 'Every transformation below came from a plan written for one specific person. No templates.',
+    title: 'Before & After Fitness Results',
+    intro: 'See before and after fitness results from personalized plans written for one specific person. No templates.',
     before: 'Before',
     now: 'Now',
     clients: [
@@ -138,8 +140,9 @@ export default {
 
   contact: {
     kicker: "Let's Start",
-    title: 'Book your free consultation',
-    intro: "Fill in the form and I'll get back to you within 24 hours with your first assessment.",
+    title: 'Get Your Personalized Plan',
+    intro:
+      "Tell Alex Forge about your goal and get a free consultation for a personalized fitness and nutrition plan. I'll reply within 24 hours.",
     sentTitle: 'Message sent!',
     sentThanks: (name) =>
       `Thanks${name ? `, ${name}` : ''} — I'll get back to you within 24 hours with your first assessment.`,

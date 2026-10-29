@@ -24,7 +24,7 @@ export default function Hero() {
 
           <div className="mt-9 flex flex-wrap gap-4">
             <Button href="#contact">{t.hero.primaryCta}</Button>
-            <Button href="#services" variant="white">
+            <Button href="#results" variant="white">
               {t.hero.secondaryCta}
             </Button>
           </div>
@@ -49,6 +49,8 @@ export default function Hero() {
               alt={t.hero.imageAlt}
               width="632"
               height="720"
+              fetchPriority="high"
+              decoding="async"
               className="aspect-4/3 w-full object-cover object-[center_20%] lg:aspect-4/5 lg:object-top"
             />
           </div>

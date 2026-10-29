@@ -73,6 +73,27 @@ export default function EatSmart() {
             <SectionHeading kicker={t.eatSmart.kicker} title={t.eatSmart.title} className="mb-7" />
 
             <p className="text-[#333]">{t.eatSmart.text}</p>
+            <p className="mt-4 text-sm text-[#333]">
+              Learn more from the{' '}
+              <a
+                href="https://www.who.int/news-room/fact-sheets/detail/healthy-diet"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border-b-2 border-ink bg-white font-bold"
+              >
+                World Health Organization healthy diet guidance
+              </a>{' '}
+              and{' '}
+              <a
+                href="https://examine.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border-b-2 border-ink bg-white font-bold"
+              >
+                evidence-based nutrition research at Examine
+              </a>
+              .
+            </p>
 
             <ul className="mt-6 space-y-3">
               {t.eatSmart.points.map((point, i) => (
